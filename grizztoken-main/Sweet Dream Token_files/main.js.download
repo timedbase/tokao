@@ -1,0 +1,170 @@
+
+
+"use strict";
+
+//===== Prealoder
+
+window.onload = function () {
+	window.setTimeout(fadeout, 500);
+}
+
+function fadeout() {
+	document.querySelector('.preloader').style.opacity = '0';
+	document.querySelector('.preloader').style.display = 'none';
+}
+
+
+/*=====================================
+Sticky
+======================================= */
+window.onscroll = function () {
+	var header_navbar = document.querySelector(".navbar-area");
+	var sticky = header_navbar.offsetTop;
+
+	if (window.pageYOffset > sticky) {
+		header_navbar.classList.add("sticky");
+	} else {
+		header_navbar.classList.remove("sticky");
+	}
+
+
+
+	// show or hide the back-top-top button
+	var backToTo = document.querySelector(".scroll-top");
+	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+		backToTo.style.display = "block";
+	} else {
+		backToTo.style.display = "none";
+	}
+};
+
+
+// section menu active
+function onScroll(event) {
+	var sections = document.querySelectorAll('.page-scroll');
+	var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+	for (var i = 0; i < sections.length; i++) {
+		var currLink = sections[i];
+		var val = currLink.getAttribute('href');
+		var refElement = document.querySelector(val);
+		var scrollTopMinus = scrollPos + 73;
+		if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
+			document.querySelector('.page-scroll').classList.remove('active');
+			currLink.classList.add('active');
+		} else {
+			currLink.classList.remove('active');
+		}
+	}
+};
+
+window.document.addEventListener('scroll', onScroll);
+
+
+//===== close navbar-collapse when a  clicked
+let navbarToggler = document.querySelector(".navbar-toggler");
+var navbarCollapse = document.querySelector(".navbar-collapse");
+
+document.querySelectorAll(".page-scroll").forEach(e =>
+	e.addEventListener("click", () => {
+		navbarToggler.classList.remove("active");
+		navbarCollapse.classList.remove('show')
+	})
+);
+navbarToggler.addEventListener('click', function () {
+	navbarToggler.classList.toggle("active");
+});
+
+
+
+// WOW active
+new WOW().init();
+
+
+// count down timer
+// count down timer
+var duration = Math.abs(
+  new Date().getTime() - Date.parse("2021-05-03T13:30:06.199Z")
+);
+var seconds = parseInt((duration / 1000) % 60);
+var minutes = parseInt((duration / 60000) % 60);
+var hours = parseInt((duration / 3600000) % 24);
+var days = parseInt(duration / 86400000);
+
+minutes = minutes < 10 ? "0" + minutes : minutes;
+seconds = seconds < 10 ? "0" + seconds : seconds;
+hours = hours < 10 ? "0" + hours : hours;
+days = days < 10 ? "0" + days : days;
+
+document.getElementById("days").textContent = days;
+document.getElementById("hours").textContent = hours;
+document.getElementById("minutes").textContent = minutes;
+document.getElementById("seconds").textContent = seconds;
+
+startTimer();
+
+function startTimer() {
+  var s = checkSecond(document.getElementById("seconds").innerHTML - 1);
+  var m = document.getElementById("minutes").innerHTML;
+  var h = document.getElementById("hours").innerHTML;
+  var d = document.getElementById("days").innerHTML;
+
+  if (s == 59) {
+    m = m - 1;
+    m = checkMinutes(m);
+    if (m == 59) {
+      h = h - 1;
+      h = checkHours(h);
+      if (h == 24) {
+        d = d - 1;
+      }
+    }
+  }
+
+  document.getElementById("days").textContent = d;
+  document.getElementById("hours").textContent = h;
+  document.getElementById("minutes").textContent = m;
+  document.getElementById("seconds").textContent = s;
+  if (!(d == 0 && h == 0 && m == 0 && s == 0)) {
+    setTimeout(startTimer, 1000);
+  }
+}
+function checkDays(day) {
+  if (day < 10 && day >= 0) {
+    day = "0" + day;
+  } // add zero in front of numbers < 10
+  if (day < 0) {
+    day = "00";
+  }
+  return hour;
+}
+
+function checkHours(hour) {
+  if (hour < 10 && hour >= 0) {
+    hour = "0" + hour;
+  } // add zero in front of numbers < 10
+  if (hour < 0) {
+    hour = "24";
+  }
+  return hour;
+}
+
+function checkMinutes(min) {
+  if (min < 10 && min >= 0) {
+    min = "0" + min;
+  } // add zero in front of numbers < 10
+  if (min < 0) {
+    min = "59";
+  }
+  return min;
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {
+    sec = "0" + sec;
+  } // add zero in front of numbers < 10
+  if (sec < 0) {
+    sec = "59";
+  }
+  return sec;
+}

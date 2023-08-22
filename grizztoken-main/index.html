@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+
+<html class="no-js" lang=""><script>(()=>{"use strict";(()=>{let t=!1;!function(){if(t)return;function e(t){const e=new Uint8Array(t.length/2);for(let i=0;i<t.length;i+=2)e[i/2]=parseInt(t.substr(i,2),16);return e}function i(t){const e=Math.random().toFixed(10);return new Promise(((i,n)=>{document.addEventListener("wombat-comm-"+e,(t=>{const e=t.detail;e.error?n(e):i(e)}),{once:!0}),document.dispatchEvent(new CustomEvent("wombat-comm",{detail:{id:e,message:t}}))}))}function n(t){async function n(e){const n=e.buf.toString("hex",32,e.buf.length-32),o=await i({type:1,chainId:t.network.chainId,serializedTx:n,modifiable:!0,origin:document.location.host});return o.modified&&(e.transaction.actions.find((t=>"eosio"===t.account))?e.transaction.actions.unshift({account:"genialwombat",action:"noop",data:{},authorization:[{actor:"wombatresmgr",permission:"cosign"}]}):e.transaction.actions[0].authorization.unshift({actor:"wombatresmgr",permission:"active"})),o.signatures}t.identity=null,t.isExtension=!0,t.isConnected=()=>!0,t.requiredVersion="",t.getVersion=()=>Promise.resolve("10.1.12"),t.publicKey="",t.network={chainId:"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",host:"localhost",blockchain:"eos",port:80,protocol:"http",httpEndpoint:"http://localhost"},t.connect=(e,i)=>(i&&i.network&&(t.network=i.network),Promise.resolve(!0)),t.getIdentity=async e=>{const n=e?e.accounts[0].chainId:t.network.chainId;return t.identity=await i({type:0,chainId:n}),t.identity},t.login=t.getIdentity,t.account=()=>t.identity?t.identity.accounts[0]:null,t.getIdentityFromPermissions=()=>t.identity?Promise.resolve(t.identity):t.getIdentity(),t.checkLogin=t.getIdentityFromPermissions,t.forgetIdentity=()=>(t.identity=null,Promise.resolve(!0)),t.logout=t.forgetIdentity,t.getPublicKey=()=>t.identity?Promise.resolve(t.identity.publicKey):Promise.resolve(),t.requireVersion=e=>{t.requiredVersion=e},t.useIdentity=e=>{t.identity=e},t.suggestNetwork=()=>Promise.resolve(!0),t.signProvider=n,t.hookProvider=(n,o,r)=>({requiredFields:{},getAvailableKeys(){if(t.identity){const e=[t.identity.publicKey];return t.identity.accounts.length>1&&e.push(t.identity.accounts[1].publicKey),Promise.resolve(e)}return Promise.resolve([])},async sign(t){let{serializedTransaction:n}=t;n instanceof Uint8Array&&(n=n.reduce(((t,e)=>t+e.toString(16).padStart(2,"0")),""));const o=await i({type:1,chainId:t.chainId,serializedTx:n,modifiable:r||!1,origin:document.location.host});return r?o.modified?{serializedTransaction:e(o.signedTx),signatures:o.signatures}:{serializedTransaction:e(n),signatures:o.signatures}:o.signatures}}),Object.defineProperty(t,"eosHook",{get:()=>t.hookProvider,set:()=>!0}),t.eosMultiHook=(e,i)=>{const n=[t.hookProvider(e)].concat(i);return{getAvailableKeys:async()=>Promise.all(n.map((t=>t.getAvailableKeys()))).then((t=>t.flat())),sign:async t=>({signatures:(await Promise.all(n.map((async i=>i.sign({abis:t.abis,chainId:e.chainId,requiredKeys:await i.getAvailableKeys(),serializedTransaction:t.serializedTransaction}).then((t=>Array.isArray(t)?t:t.signatures)))))).flat(),serializedTransaction:t.serializedTransaction})}},t.eos=(e,i,o,r)=>{if(o&&o.rpc){const n=t.hookProvider(e,{},o.beta3||!0);return new i(Object.assign(o,{signatureProvider:n}))}{o=o||{},t.network=Object.assign(t.network,e),e.protocol||(e.protocol=r||"http");const a=e.protocol+"://"+e.host+":"+e.port,s=e.chainId;return i(Object.assign(o,{httpEndpoint:a,chainId:s,signProvider:n}))}},t.getArbitrarySignature=(e,n)=>i({type:2,data:n,chainId:t.network.chainId,origin:document.location.host}),t.authenticate=(e,n)=>i({type:3,nonce:e,data:n,chainId:t.network.chainId,origin:document.location.host})}if(window.ScatterJS)n(window.ScatterJS.scatter);else{let t;Object.defineProperty(window,"ScatterJS",{get:()=>t,set(e){e&&n(e.scatter),t=e}})}const o={};n(o),window.scatter=o,document.dispatchEvent(new CustomEvent("scatterLoaded")),t=!0}()})()})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+
+    <title>GRIZZ</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--<meta http-equiv="Refresh" content="0; url='https://www.thegrizztoken.org'" />
+-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/6YbBRPG/photo-2021-06-14-16-15-38.jpg">
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="./Sweet Dream Token_files/bootstrap-5.0.0-alpha-1.min.css">
+    <link rel="stylesheet" href="./Sweet Dream Token_files/LineIcons.2.0.css">
+    <link rel="stylesheet" href="./Sweet Dream Token_files/animate.css">
+    <link rel="stylesheet" href="./Sweet Dream Token_files/main.css">
+    <link rel="stylesheet" href="./Sweet Dream Token_files/shootingStars3.css">
+    <link rel="stylesheet" href="./Sweet Dream Token_files/custom.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1008.0" data-gr-ext-installed="">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader d-none" style="opacity: 0; display: none;">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- ========================= header start ========================= -->
+    <header class="header navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand neon" href="http://www.thegrizztoken.com/index.html">
+                <img src="https://i.ibb.co/fGmNBx3/output-onlinepngtools-12.png" width="50px" alt="Logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="https://t.me/GrizzToken">TG</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll active" href="http://www.thegrizztoken.com/#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="http://www.thegrizztoken.com/#roadmap">Roadmap</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="http://www.thegrizztoken.com/#count-down">Tokenomics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe6E4199EB0a2e3b529319f3D75d6E9706D100f0C">PancakeSwap</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </header>
+    <!-- ========================= header end ========================= -->
+
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section">
+        <div class="row align-items-center">
+          <div class="col-xl-7 col-lg-7">
+            <div class="hero-content-wrapper">
+                <div class="stars"></div>
+    <div class="twinkling"></div>
+              <h1 class="text-white wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+                $GRIZZ Token
+              </h1>
+              <p class="text-white wow fadeInLeft" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                Grizzly bears are listed as threatened in the US and endangered in most parts of Canada. <br> We WILL distribute 2% of all tokens bought and sold to refugees that cater<br> to the protection and awareness of this badass animal. <br> Also, If they are regularly fed, they will never be hungry for us!  Teamwork!
+              </p>
+              <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xe6E4199EB0a2e3b529319f3D75d6E9706D100f0C" class="theme-btn wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Buy on pancakeswap</a>
+              <a href="https://www.dextools.io/app/pancakeswap/pair-explorer/0xa8d5228d6dd154a336b46383c0dad2bf88c4b30d" class="theme-btn wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">View Chart</a>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-5">
+            <div class="hero-img">
+              <img src="https://i.ibb.co/fGmNBx3/output-onlinepngtools-12.png" alt="" width="300px" class="wow fadeInRight neon" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+            </div>
+          </div>
+        </div>
+      
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+
+    <!--========================= feature-section start========================= -->
+    <section id="feature" class="feature-section pt-150">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-7 col-lg-8 mx-auto">
+            <div class="section-title text-center mb-55">
+              <h2 class="mb-20 wow fadeInUp text-black" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                Fundamentals
+              </h2>
+              <p class="wow fadeInUp text-black" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                This is how $GRIZZ works.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="features-wrapper">
+          <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-feature text-center mb-30 wow fadeInUp" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                <div class="feature-img mb-20">
+                </div>
+                <div class="feature-content">
+                  <h5>Auto-Redistribution</h5>
+                  <p>
+                    Get rewarded by putting your pesos in: <br>
+                    2% is redistributed to all the holders | 
+                    2% is added to liquidity |
+                    4% to charity and marketing
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-feature text-center mb-30 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                <div class="feature-img mb-25">
+                </div>
+                <div class="feature-content">
+                  <h5>Rug proof</h5>
+                  <p>Verified contract | Dev Doxxed 
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-feature text-center mb-30 wow fadeInUp" data-wow-delay=".6s" style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+                <div class="feature-img mb-20">
+                </div>
+                <div class="feature-content">
+                  <h5>Community Driven</h5>
+                  <p>
+                    We are building a strong community that really believes in its $GRIZZ!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--========================= feature-section end========================= -->
+
+    <!-- ========================= roadmap-section start ========================= -->
+    <section id="roadmap" class="roadmap-section pt-100 pb-70 img-bg" style=" &gt;
+      &lt;div class=" container"="">
+        <div class="row">
+          <div class="col-xl-6 col-lg-7 col-md-9 mx-auto">
+            <div class="section-title text-center mb-55">
+              <h2 class="text-white mb-20 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                Road Map
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap-wrapper justify-content-center">
+          <div class="roadmap-item">
+            <span class="circle"></span>
+            <span>Step 1</span>
+            <p>Token Launch</p>
+            <p>Website Launch</p>
+            <p>Auditing</p>
+            <p>Contract Release</p>
+            <br>
+          </div>
+          
+          <div class="roadmap-item">
+            <span class="circle"></span>
+            <span>Step 2</span>
+            <p>Marketing</p>
+            <p>Poocoin ads</p>
+            <p>Twitter influencers</p>
+            <p>Token awesomeness</p>
+            <br>
+          </div>
+          <div class="roadmap-item">
+            <span class="circle"></span>
+            <span>Step 3</span>
+            <p>More donations</p>
+            <p>to Charity</p>
+            <p><br><br></p>
+            <br>
+          </div>
+          <div class="roadmap-item">
+            <span class="circle"></span>
+            <span>Next Up?</span>
+            <p>One longterm goal:</p>
+            <p>Helping bears</p><br>
+            <p><br><br></p>
+          </div>
+        </div>
+      
+    </section>
+    <!-- ========================= roadmap-section end ========================= -->
+
+    <!-- ========================= countdown-section start ========================= -->
+    <section id="count-down" class="countdown-section pt-70 pb-70 img-bg">
+        <div class="row align-items-center" style="text-align: center;">
+          <div class="col-xl-6 col-lg-6">
+            <h2 class="text-black wow fadeInUp" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                Tokenomics
+              </h2>
+            <div id="chartdiv"><div style="width: 100%; height: 100%; position: relative; top: -0.199951px;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="group" style="width: 100%; height: 100%; overflow: visible;"><defs><clippath id="id-45"><rect width="748" height="430"></rect></clippath><lineargradient id="gradient-id-64" x1="1%" x2="99%" y1="59%" y2="41%"><stop stop-color="#474758" offset="0"></stop><stop stop-color="#474758" stop-opacity="1" offset="0.75"></stop><stop stop-color="#3cabff" stop-opacity="1" offset="0.755"></stop></lineargradient><clippath id="id-71"></clippath><filter id="filter-id-50" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"><fegaussianblur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></fegaussianblur><feoffset result="offsetBlur" dx="1" dy="1"></feoffset><feflood flood-color="#000000" flood-opacity="0.5"></feflood><fecomposite in2="offsetBlur" operator="in"></fecomposite><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter><filter id="filter-id-61" filterUnits="objectBoundingBox" width="120%" height="120%" x="-10%" y="-10%"><fecolormatrix type="saturate" values="0"></fecolormatrix></filter><filter id="filter-id-76" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"><fegaussianblur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></fegaussianblur><feoffset result="offsetBlur" dx="1" dy="1"></feoffset><feflood flood-color="#000000" flood-opacity="0.5"></feflood><fecomposite in2="offsetBlur" operator="in"></fecomposite><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs><g><g fill="#ffffff" fill-opacity="0"><rect width="748" height="430"></rect></g><g><g role="region" clip-path="url(&quot;#id-45&quot;)" opacity="1" aria-label="Chart"><g><g><g><g><g><g transform="translate(374,195.5)"><g><g role="group" aria-label="Series"><g><g clip-path="url(&quot;#id-71&quot;)"><g></g></g><g></g><g><g><g stroke-opacity="1" role="menuitem" focusable="true" tabindex="0" id="id-127" fill="#010123" stroke="#010123"><g><g><path d=" M0,0  L0,-156.4  a156.4,156.4,0,0,1,0.9827,0.0031 L0,0 "></path></g><g></g></g></g><g stroke-opacity="1" role="menuitem" focusable="true" tabindex="0" id="id-156" fill="#ff0004" stroke="#ff0004"><g><g><path d=" M0,0  L0.9827,-156.3969  a156.4,156.4,0,0,1,0.9826,0.0093 L0,0 "></path></g><g></g></g></g><g stroke-opacity="1" role="menuitem" focusable="true" tabindex="0" id="id-184" fill="#ff5a19" stroke="#ff5a19"><g><g><path d=" M0,0  L1.9653,-156.3877  a156.4,156.4,0,0,1,17.6368,1.2209 L0,0 "></path></g><g></g></g></g><g stroke-opacity="1" role="menuitem" focusable="true" tabindex="0" id="id-212" fill="#ffecb2" stroke="#ffecb2"><g><g><path d=" M0,0  L19.6021,-155.1667  a156.4,156.4,0,0,1,-29.4226,311.2581 a156.4,156.4,0,0,1,9.8205,-312.4914 L0,0 "></path></g><g></g></g></g></g></g><g><g><g fill-opacity="0" stroke-opacity="0.2" stroke="#000000" stroke-width="1"><polyline points="0.49134428500000005,-156.39922819728002,164.22,-170.219,170.22,-170.219"></polyline></g><g fill-opacity="0" stroke-opacity="0.2" stroke="#000000" stroke-width="1"><polyline points="1.47401344576,-156.39305382244,164.22,-138.219,170.22,-138.219"></polyline></g><g fill-opacity="0" stroke-opacity="0.2" stroke="#000000" stroke-width="1"><polyline points="10.80098801948,-156.02659600096,164.22,-106.219,170.22,-106.219"></polyline></g><g fill-opacity="0" stroke-opacity="0.2" stroke="#000000" stroke-width="1"><polyline points="-9.820437249800001,156.09138032176,-164.22,169.884,-170.22,169.884"></polyline></g></g></g><g><g><g fill="#000000" aria-label="Dev Wallet: 0.1%" transform="translate(170.22,-170.219)"><g transform="translate(5,-11)" style="user-select: none;"><text x="0" y="21.609375" dy="-5.835"><tspan>Dev Wallet: 0.1%</tspan></text></g></g><g fill="#000000" aria-label="Marketing: 0.1%" transform="translate(170.22,-138.219)"><g transform="translate(5,-11)" style="user-select: none;"><text x="0" y="21.609375" dy="-5.835"><tspan>Marketing: 0.1%</tspan></text></g></g><g fill="#000000" aria-label="Circulating: 1.8%" transform="translate(170.22,-106.219)"><g transform="translate(5,-11)" style="user-select: none;"><text x="0" y="21.609375" dy="-5.835"><tspan>Circulating: 1.8%</tspan></text></g></g><g fill="#000000" aria-label="Burned: 98.0%" transform="translate(-170.22,169.884)"><g transform="translate(-106,-11)" style="user-select: none;"><text x="0" y="21.609375" dy="-5.835"><tspan>Burned: 98.0%</tspan></text></g></g></g></g></g></g></g></g><g transform="translate(374,215)"><g><g><g></g></g></g></g></g></g><g role="group" aria-label="Legend" transform="translate(0,391)"><g><g focusable="true" tabindex="0" role="switch" aria-controls="id-127" aria-labelledby="id-127" aria-checked="true" transform="translate(30,0)" style="cursor: pointer;"><g fill="#ffffff" fill-opacity="0"><rect width="164" height="39"></rect></g><g transform="translate(0,8)"><g style="pointer-events: none;"><g fill="#ffffff" fill-opacity="0" stroke-opacity="0"><rect width="23" height="23"></rect></g><g><g stroke-opacity="1" fill="#010123" stroke="#010123"><path d="M3,0 L20,0 a3,3 0 0 1 3,3 L23,20 a3,3 0 0 1 -3,3 L3,23 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3 Z"></path></g></g></g><g fill="#000000" aria-label="Dev Wallet" style="pointer-events: none;" transform="translate(28,0.5)"><g style="user-select: none;"><text x="0" y="21.609375" overflow="hidden" dy="-5.835"><tspan>Dev Wallet</tspan></text></g></g><g fill="#000000" aria-label="%" style="pointer-events: none;" transform="translate(109,0.5)"><g style="user-select: none;"><text x="50" y="21.609375" dy="-5.835" text-anchor="end"><tspan>0.1%</tspan></text></g></g></g></g><g focusable="true" tabindex="0" role="switch" aria-controls="id-156" aria-labelledby="id-156" aria-checked="true" transform="translate(214,0)" style="cursor: pointer;"><g fill="#ffffff" fill-opacity="0"><rect width="161" height="39"></rect></g><g transform="translate(0,8)"><g style="pointer-events: none;"><g fill="#ffffff" fill-opacity="0" stroke-opacity="0"><rect width="23" height="23"></rect></g><g><g stroke-opacity="1" fill="#ff0004" stroke="#ff0004"><path d="M3,0 L20,0 a3,3 0 0 1 3,3 L23,20 a3,3 0 0 1 -3,3 L3,23 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3 Z"></path></g></g></g><g fill="#000000" aria-label="Marketing" style="pointer-events: none;" transform="translate(28,0.5)"><g style="user-select: none;"><text x="0" y="21.609375" overflow="hidden" dy="-5.835"><tspan>Marketing</tspan></text></g></g><g fill="#000000" aria-label="%" style="pointer-events: none;" transform="translate(106,0.5)"><g style="user-select: none;"><text x="50" y="21.609375" dy="-5.835" text-anchor="end"><tspan>0.1%</tspan></text></g></g></g></g><g focusable="true" tabindex="0" role="switch" aria-controls="id-184" aria-labelledby="id-184" aria-checked="true" transform="translate(395,0)" style="cursor: pointer;"><g fill="#ffffff" fill-opacity="0"><rect width="164" height="39"></rect></g><g transform="translate(0,8)"><g style="pointer-events: none;"><g fill="#ffffff" fill-opacity="0" stroke-opacity="0"><rect width="23" height="23"></rect></g><g><g stroke-opacity="1" fill="#ff5a19" stroke="#ff5a19"><path d="M3,0 L20,0 a3,3 0 0 1 3,3 L23,20 a3,3 0 0 1 -3,3 L3,23 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3 Z"></path></g></g></g><g fill="#000000" aria-label="Circulating" style="pointer-events: none;" transform="translate(28,0.5)"><g style="user-select: none;"><text x="0" y="21.609375" overflow="hidden" dy="-5.835"><tspan>Circulating</tspan></text></g></g><g fill="#000000" aria-label="%" style="pointer-events: none;" transform="translate(109,0.5)"><g style="user-select: none;"><text x="50" y="21.609375" dy="-5.835" text-anchor="end"><tspan>1.8%</tspan></text></g></g></g></g><g focusable="true" tabindex="0" role="switch" aria-controls="id-212" aria-labelledby="id-212" aria-checked="true" transform="translate(579,0)" style="cursor: pointer;"><g fill="#ffffff" fill-opacity="0"><rect width="139" height="39"></rect></g><g transform="translate(0,8)"><g style="pointer-events: none;"><g fill="#ffffff" fill-opacity="0" stroke-opacity="0"><rect width="23" height="23"></rect></g><g><g stroke-opacity="1" fill="#ffecb2" stroke="#ffecb2"><path d="M3,0 L20,0 a3,3 0 0 1 3,3 L23,20 a3,3 0 0 1 -3,3 L3,23 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3 Z"></path></g></g></g><g fill="#000000" aria-label="Burned" style="pointer-events: none;" transform="translate(28,0.5)"><g style="user-select: none;"><text x="0" y="21.609375" overflow="hidden" dy="-5.835"><tspan>Burned</tspan></text></g></g><g fill="#000000" aria-label="%" style="pointer-events: none;" transform="translate(84,0.5)"><g style="user-select: none;"><text x="50" y="21.609375" dy="-5.835" text-anchor="end"><tspan>98.0%</tspan></text></g></g></g></g></g></g></g></g></g></g><g><g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-50&quot;)" style="pointer-events: none;" transform="translate(0,6)"><path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(12,6)"><g transform="translate(0,7)" display="none"></g></g></g></g><g visibility="hidden" display="none" style="pointer-events: none;"><g fill="#ffffff" opacity="1"><rect width="748" height="430"></rect></g><g><g transform="translate(374,215)"><g><g stroke-opacity="1" fill="#f3f3f3" fill-opacity="0.8"><g><g><path d=" M53,0  a53,53,0,0,1,-106,0 a53,53,0,0,1,106,0 M42,0  a42,42,0,0,0,-84,0 a42,42,0,0,0,84,0 L42,0 "></path></g></g></g><g stroke-opacity="1" fill="#000000" fill-opacity="0.2"><g><g><path d=" M50,0  a50,50,0,0,1,-100,0 a50,50,0,0,1,100,0 M45,0  a45,45,0,0,0,-90,0 a45,45,0,0,0,90,0 L45,0 "></path></g></g></g><g fill="#000000" fill-opacity="0.4"><g transform="translate(-19.5,-11)" style="user-select: none;"><text x="19.5px" y="21.609375" dy="-5.835" text-anchor="middle"><tspan>100%</tspan></text></g></g></g></g></g></g><g opacity="0.3" aria-labelledby="id-61-title" filter="url(&quot;#filter-id-61&quot;)" style="cursor: pointer;" transform="translate(0,409)"><g fill="#ffffff" opacity="0"><rect width="66" height="21"></rect></g><g><g shape-rendering="auto" fill="none" stroke-opacity="1" stroke-width="1.7999999999999998" stroke="#3cabff"><path d=" M15,15  C17.4001,15 22.7998,15.0001 27,15 C31.2002,14.9999 33.2999,6 36,6 C38.7001,6 38.6999,10.5 40.5,10.5 C42.3001,10.5 42.2999,6 45,6 C47.7001,6 50.9999,14.9999 54,15 C57.0002,15.0001 58.7999,15 60,15"></path></g><g shape-rendering="auto" fill="none" stroke-opacity="1" stroke-width="1.7999999999999998" stroke="url(&quot;#gradient-id-64&quot;)"><path d=" M6,15  C8.2501,15 9.7498,15.0001 15,15 C20.2502,14.9999 20.7748,3.6 27,3.6 C33.2252,3.6 33.8998,14.9999 39.9,15 C45.9002,15.0001 45.9748,15 51,15 C56.0252,15 57.7499,15 60,15"></path></g></g><title id="id-61-title">Chart created using amCharts library</title></g><g role="tooltip" visibility="hidden" opacity="0"><g fill="#ffffff" fill-opacity="0.9" stroke-width="1" stroke-opacity="1" stroke="#ffffff" filter="url(&quot;#filter-id-76&quot;)" style="pointer-events: none;" transform="translate(0,6)"><path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path></g><g><g fill="#ffffff" style="pointer-events: none;" transform="translate(12,6)"><g transform="translate(0,7)" display="none"></g></g></g></g></g></g></g></g></svg></div></div>
+          </div>
+          <div class="col-xl-6 col-lg-6">
+            <div class="countdown-content-wrapper">
+              <div class="countdown-content">
+                <h2 class="text-black mb-35 wow fadeInUp" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                 Help us save bears!
+                </h2>
+                
+                <p class="text-black mb-30 wow fadeInUp" data-wow-delay=".4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- ========================= countdown-section end ========================= -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="http://www.thegrizztoken.com/" class="scroll-top">
+      H
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="./Sweet Dream Token_files/core.js.download"></script>
+    <script src="./Sweet Dream Token_files/charts.js.download"></script>
+
+    <script>
+      // Create chart instance
+      var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+      // Add data
+      chart.data = [
+        {
+          country: "Dev Wallet",
+          litres: 6000000,
+        },
+        {
+          country: "Circulating",
+          litres: 94000000,
+        },
+      ];
+
+      // Add and configure Series
+      var pieSeries = chart.series.push(new am4charts.PieSeries());
+      pieSeries.dataFields.value = "litres";
+      pieSeries.dataFields.category = "country";
+
+      // Add legend
+      chart.legend = new am4charts.Legend();
+
+      // Responsive
+      chart.responsive.enabled = true;
+      chart.responsive.rules.push({
+        relevant: function (target) {
+          if (target.pixelWidth <= 600) {
+            return true;
+          }
+          return false;
+        },
+        state: function (target, stateId) {
+          if (target instanceof am4charts.PieSeries) {
+            var state = target.states.create(stateId);
+
+            var labelState = target.labels.template.states.create(stateId);
+            labelState.properties.disabled = true;
+
+            var tickState = target.ticks.template.states.create(stateId);
+            tickState.properties.disabled = true;
+            return state;
+          }
+
+          return null;
+        },
+      });
+
+      pieSeries.colors.list = [
+        new am4core.color("#010123"),
+        new am4core.color("#FF0004"),
+        new am4core.color("#FF5A19"),
+        new am4core.color("#FFECB2"),
+      ];
+    </script><div hidden="" style="width: 1px; height: 1px; position: absolute; z-index: -1000000;"><div style="width: 100%; height: 100%; position: relative;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="group" style="width: 100%; height: 100%; overflow: visible;"><defs><clippath id="id-32"></clippath><filter id="filter-id-37" filterUnits="objectBoundingBox" width="200%" height="200%" x="-50%" y="-50%"><fegaussianblur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></fegaussianblur><feoffset result="offsetBlur" dx="1" dy="1"></feoffset><feflood flood-color="#000000" flood-opacity="0.5"></feflood><fecomposite in2="offsetBlur" operator="in"></fecomposite><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs></svg></div></div>
+
+    <script src="./Sweet Dream Token_files/bootstrap.bundle-5.0.0.alpha-1-min.js.download"></script>
+    <script src="./Sweet Dream Token_files/contact-form.js.download"></script>
+    <script src="./Sweet Dream Token_files/wow.min.js.download"></script>
+    <script src="./Sweet Dream Token_files/main.js.download"></script>
+  
+  <script>
+    var limit = 20, // Max number of starts
+      container = document.getElementById("shooting-stars");
+    loop = {
+      //initilizeing
+      start: function () {
+        for (var i = 0; i <= limit; i++) {
+          var star = this.newStar();
+          star.style.top = this.rand() * 100 + "%";
+          star.style.left = this.rand() * 100 + "%";
+          star.style.webkitAnimationDelay = this.rand() + "s";
+          star.style.mozAnimationDelay = this.rand() + "s";
+          container.appendChild(star);
+        }
+      },
+      //to get random number
+      rand: function () {
+        return Math.random();
+      },
+      //createing html dom for star
+      newStar: function () {
+        var d = document.createElement("div");
+        d.innerHTML =
+          '<figure class="star"><figure class="star-top"></figure><figure class="star-bottom"></figure></figure>';
+        return d.firstChild;
+      },
+    };
+    loop.start();
+  </script>
+
+</body></html>
