@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A token to make the world a better and greener place. We can hear you think, how can a token change the world? One simple answer, by planting trees.">
+    <meta name="keywords" content="Vain, Vain Token, VainToken, Vain Crypto, Vain Cryptocurrency, Vain BSC, BSC, Binance Smart Chain, Cryptocurrency, Vain Plant Trees, Plant trees, Trees, Charity, Better and greener place">
+    <title>Vain Token</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.6/web3.min.js"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+    <link rel="stylesheet" href="./assets/css/styles.css?0046">
+
+    <script>
+        var vain = (function() {
+            var isMenuVisible = false;
+
+            return {
+                getDonationWalletBalance: async function() {
+                    var walletAddress = '0x8f5D284610e3A1Ef883688cA795487a98B1b7B8F';
+
+                    var web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.binance.org:443'));
+                    web3.eth.getBalance(walletAddress)
+                        .then(function (value) {
+                            var balance = Number(web3.utils.fromWei(value)).toFixed(2);
+
+                            var max = 117;
+                            var stages = 10;
+                            var stageAmount = 12;
+                            var currentStageAmount = 0;
+                            var previousStageAmount = 0;
+                            var currentStage = 1;
+
+                            for (var i = 1; i <= stages; i++) {
+                                currentStageAmount = Math.min(i * stageAmount, max);
+                                previousStageAmount = (i-1) * stageAmount;
+                                currentStage = i;
+
+                                if (balance <= currentStageAmount) {
+                                    break;
+                                }
+                            }
+
+                            var percent = Math.min(100, (balance - previousStageAmount) * 100 / (currentStageAmount - previousStageAmount));
+
+                            document.getElementById('donation-state').innerText = balance + ' BNB of ' + currentStageAmount + ', step ' + currentStage + '/' + stages;
+
+                            document.getElementById('progress-bar').style.width = percent + '%';
+                        });
+                },
+                toggleMenu: function() {
+                    isMenuVisible = !isMenuVisible;
+
+                    var burger = document.getElementById('menu-open');
+                    var close = document.getElementById('menu-close');
+                    var menu = document.getElementById('menu');
+
+                    burger.classList.remove('display-block', 'display-none');
+                    close.classList.remove('display-block', 'display-none');
+                    menu.classList.remove('display-block', 'display-none');
+
+                    if (isMenuVisible) {
+                        burger.classList.add('display-none');
+                        close.classList.add('display-block');
+                        menu.classList.add('display-block');
+                    } else {
+                        burger.classList.add('display-block');
+                        close.classList.add('display-none');
+                        menu.classList.add('display-none');
+                    }
+                },
+                scrollToTop: function () {
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                },
+                startCountdown: function() {
+                    fetch("https://vain.ondalom.workers.dev/timestamp").then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (json) {
+                        const time = window.location.hash.indexOf("launch") >= 0 ? Date.now() + 5000 : 1623607200000;
+                        var seconds = Math.round((time - json.timestamp)/1000);
+
+                        if (seconds <= 0) {
+                            vain.revealContract();
+                            return;
+                        }
+
+                        function timer() {
+                            var days        = Math.floor(seconds/24/60/60);
+                            var hoursLeft   = Math.floor((seconds) - (days*86400));
+                            var hours       = Math.floor(hoursLeft/3600);
+                            var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+                            var minutes     = Math.floor(minutesLeft/60);
+                            var remainingSeconds = seconds % 60;
+
+                            function pad(n) {
+                                return (n < 10 ? "0" + n : n);
+                            }
+
+                            document.getElementById('countdown-days').innerHTML = pad(days);
+                            document.getElementById('countdown-hours').innerHTML = pad(hours);
+                            document.getElementById('countdown-mins').innerHTML = pad(minutes);
+                            document.getElementById('countdown-secs').innerHTML = pad(remainingSeconds);
+
+                            if (seconds === 0) {
+                                clearInterval(countdownTimer);
+                                vain.revealContract();
+                            } else {
+                                seconds--;
+                            }
+                        }
+                        var countdownTimer = setInterval(timer, 1000);
+                    })
+                },
+                copyInputValue: function(button, input) {
+                    /* Get the text field */
+
+                    /* Select the text field */
+                    input.select();
+                    input.setSelectionRange(0, 99999); /* For mobile devices */
+
+                    /* Copy the text inside the text field */
+                    document.execCommand("copy");
+
+                    button.innerText = "copied";
+                },
+                revealContract: function () {
+                    fetch("https://vain.ondalom.workers.dev/contract").then(function (resonse) {
+                        return resonse.json()
+                    })
+                    .then(function (json) {
+                        document.getElementById("before-launch").style.display = "none";
+                        document.getElementById("after-launch").style.display = "block";
+
+                        document.getElementById("pancakeswap-link").href = "https://exchange.pancakeswap.finance/#/swap?outputCurrency=" + json.contract;
+                        document.getElementById("contract").value = json.contract;
+                        document.getElementById("contract2").innerText = json.contract;
+                    });
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+    <div class="scroll" id="scroll" onclick="vain.scrollToTop()">
+        <img src="./assets/images/arrow-up.svg" alt="Scroll to top">
+    </div>
+    <div class="viewport">
+        <section class="head">
+            <img src="./assets/images/menu.svg" onclick="vain.toggleMenu()" alt="Menu" id="menu-open" class="menu-burger">
+            <img src="./assets/images/x.svg" onclick="vain.toggleMenu()" alt="Close menu" id="menu-close" class="menu-close">
+            <div class="logo">
+                <a href="/">
+                    <img src="./assets/images/vain-logo.svg" alt="Logo">
+                </a>
+            </div>
+            <div class="menu" id="menu">
+                <a href="/">Home</a>
+                <a href="#about-us">About Us</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#htb">How To Buy</a>
+                <a href="./assets/files/whitepaper.pdf" target="_blank">Whitepaper</a>
+                <a href="#social">Social</a>
+                <a target="_blank" href="https://github.com/VainTokenCom">Github</a>
+            </div>
+        </section>
+        <div class="sections"></div>
+        <section class="countdown">
+<!--            <div id="before-launch">-->
+<!--                <h1 class="countdown-title">Fair Launch</h1>-->
+<!--                <div class="time">-->
+<!--                    <div class="time-block">-->
+<!--                        <div class="time-number" id="countdown-days">00</div>-->
+<!--                        <div class="time-caption green">DAYS</div>-->
+<!--                    </div>-->
+<!--                    <div class="time-block">-->
+<!--                        <div class="time-number" id="countdown-hours">00</div>-->
+<!--                        <div class="time-caption green">HOURS</div>-->
+<!--                    </div>-->
+<!--                    <div class="time-block">-->
+<!--                        <div class="time-number" id="countdown-mins">00</div>-->
+<!--                        <div class="time-caption green">MINS</div>-->
+<!--                    </div>-->
+<!--                    <div class="time-block">-->
+<!--                        <div class="time-number" id="countdown-secs">00</div>-->
+<!--                        <div class="time-caption green">SEC</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div id="after-launch" style="display: none">
+                <div style="display: flex; margin-bottom: 1rem">
+                    <div class="contract-copy">
+                        <div class="input-label"><span>Contract</span></div>
+                        <input type="text" value="0x7d03d1ae4de2702d282540782c595027bdb9d76e" id="contract" readonly>
+                        <button type="button" class="copy-button" id="copy-button" onclick="vain.copyInputValue(this, document.getElementById('contract'))">copy</button>
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <div class="contract-copy" style="margin-bottom: 2rem">
+                        <div class="input-label" style="width: 140px"><span>WhiteBIT donation</span></div>
+                        <input type="text" value="0x8f5D284610e3A1Ef883688cA795487a98B1b7B8F" id="donation-address" readonly>
+                        <button type="button" class="copy-button" onclick="vain.copyInputValue(this, document.getElementById('donation-address'))">copy</button>
+                        <div class="progress">
+                            <div class="progress-filled" id="progress-bar"></div>
+                            <div style="position: relative" id="donation-state">loading progress...</div>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7d03d1ae4de2702d282540782c595027bdb9d76e" id="pancakeswap-link" target="_blank">Buy on PancakeSwap</a>
+                </p>
+                <p>
+                    <a href="https://bscscan.com/token/0x7d03d1ae4de2702d282540782c595027bdb9d76e" target="_blank">View on BscScan</a>
+                </p>
+                <p>
+                    <a href="https://charts.bogged.finance/?token=0x7D03D1aE4DE2702d282540782C595027Bdb9D76e" target="_blank">Open chart</a>
+                </p>
+            </div>
+        </section>
+        <section class="top-text">
+            <h1 class="title">A token to make the world a better and <span class="green">greener</span> place</h1>
+            <div class="description with-padding">
+                <p>We can hear you think, how can a token change the world? One simple answer, by planting trees.</p>
+            </div>
+        </section>
+        <section class="graphics">
+            <div class="graphics-container">
+                <video class="coin" preload autoplay muted loop playsinline poster="">
+                    <source src="./assets/video/vain-token.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="./assets/images/dots-vertical.svg" alt="Vertical dots" class="dots-vertical">
+                <img src="./assets/images/dots.svg" alt="Dots" class="dots-left">
+                <img src="./assets/images/planet.png" alt="Planet" class="planet">
+                <img src="./assets/images/dots.svg" alt="Dots" class="dots-right">
+                <img src="./assets/images/dots-vertical.svg" alt="Vertical dots" class="dots-vertical">
+                <img src="./assets/images/tree.svg" alt="Tree" class="tree">
+            </div>
+        </section>
+        <section class="about-us" id="about-us">
+            <h1 class="title mb2">About Us<span class="green">.</span></h1>
+            <div class="description">
+                <p>Vain is made by a strong and passionate team that wants the world to be a better and greener place.</p>
+                <p>We have graphic designers, web developers, writers, marketers and all this for a starting project!</p>
+            </div>
+            <div class="movement">
+                <h2 class="title-small">Vain is a movement and we will keep moving until the end!</h2>
+                <img src="./assets/images/vain-movement.svg" alt="Vain Movement">
+            </div>
+        </section>
+        <h1 class="title mb2" id="roadmap">Roadmap<span class="green">.</span></h1>
+        <section class="roadmap-mobile">
+            <div class="roadmap-block q2">
+                <div class="q">Q2 2021</div>
+                <div class="block-description">
+                    <p class="check">Faces behind Vain revealed</p>
+                    <p class="check">Launch of our website and social channels</p>
+                    <p class="check">Release of our official whitepaper</p>
+                    <p class="check">Creation of our key marketing strategy</p>
+                    <p class="check">Launch of the Vain token</p>
+                    <p>Vain’s first donation</p>
+                    <p>Vain’s first giveaway</p>
+                    <p>Listing on CMC, CoinGecko…</p>
+                </div>
+            </div>
+            <div class="roadmap-block q3">
+                <div class="q">Q3 2021</div>
+                <div class="block-description">
+                    <p>Vain AMA</p>
+                    <p>Vain Swap</p>
+                    <p>Huge marketing push (YouTube sponsoring, Media attention, Influencers)</p>
+                    <p>Spread awareness using billboard advertisements</p>
+                    <p>More listings; Blockfolio, Whitebit…</p>
+                    <p>Vain merch conceptualization </p>
+                    <p>More trees  planted!</p>
+                </div>
+            </div>
+            <div class="roadmap-block q4">
+                <div class="q">Q4 2021</div>
+                <div class="block-description">
+                    <p>Reach out to the Bitvavo exchange</p>
+                    <p>First Vain Founder’s Edition NFT drop</p>
+                    <p>Community giveaways, Twitch livestreams</p>
+                    <p>Vain merch drop</p>
+                    <p>Establishing partnerships with our key charities</p>
+                    <p>Even more trees!</p>
+                </div>
+            </div>
+            <div class="roadmap-block">
+                <div class="q">Q1 2022</div>
+                <div class="block-description">
+                    <p>Organizing an IRL tree planting convention</p>
+                    <p>NFT Marketplace conceptualization </p>
+                    <p>Gain worldwide recognition</p>
+                    <p>Shhh-Secret project</p>
+                </div>
+            </div>
+        </section>
+        <section class="roadmap">
+            <div class="blocks-container">
+                <div class="roadmap-block">
+                    <div class="q">Q1 2022</div>
+                    <div class="block-description">
+                        <p>Organizing an IRL tree planting convention</p>
+                        <p>NFT Marketplace conceptualization </p>
+                        <p>Gain worldwide recognition</p>
+                        <p>Shhh-Secret project</p>
+                    </div>
+                </div>
+                <div class="roadmap-block q3">
+                    <div class="q">Q3 2021</div>
+                    <div class="block-description">
+                        <p>Vain AMA</p>
+                        <p>Vain Swap</p>
+                        <p>Huge marketing push (YouTube sponsoring, Media attention, Influencers)</p>
+                        <p>Spread awareness using billboard advertisements</p>
+                        <p>More listings; Blockfolio, Whitebit…</p>
+                        <p>Vain merch conceptualization </p>
+                        <p>More trees  planted!</p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/images/roadmap.svg" alt="Roadmap" class="roadmap-tree">
+            <div class="blocks-container">
+                <div class="roadmap-block q4">
+                    <div class="q">Q4 2021</div>
+                    <div class="block-description">
+                        <p>Reach out to the Bitvavo exchange</p>
+                        <p>First Vain Founder’s Edition NFT drop</p>
+                        <p>Community giveaways, Twitch livestreams</p>
+                        <p>Vain merch drop</p>
+                        <p>Establishing partnerships with our key charities</p>
+                        <p>Even more trees!</p>
+                    </div>
+                </div>
+                <div class="roadmap-block q2">
+                    <div class="q">Q2 2021</div>
+                    <div class="block-description">
+                        <p class="check">Faces behind Vain revealed</p>
+                        <p class="check">Launch of our website and social channels</p>
+                        <p class="check">Release of our official whitepaper</p>
+                        <p class="check">Creation of our key marketing strategy</p>
+                        <p class="check">Launch of the Vain token</p>
+                        <p>Vain’s first donation</p>
+                        <p>Vain’s first giveaway</p>
+                        <p>Listing on CMC, CoinGecko…</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tokenomics" id="tokenomics">
+            <h1 class="title mb2">Tokenomics<span class="green">.</span></h1>
+            <div class="tokenomics-body">
+                <div class="t-block t-block1">
+                    <p><span class="bold">65%</span> circulation</p>
+                    <p><span class="bold">30%</span> burned</p>
+                    <p><span class="bold">5%</span> team</p>
+                </div>
+                <div class="t-block t-block2">
+                    <p><span class="bold">10%</span> transaction tax:</p>
+                    <p><span class="bold">5%</span> holders</p>
+                    <p><span class="bold">5%</span> liquidity</p>
+                </div>
+            </div>
+        </section>
+        <section class="htb" id="htb">
+            <h1 class="title mb2">How To Buy<span class="green">.</span></h1>
+            <div class="htb-body">
+                <div class="htb-block">
+                    <p>Download <span class="bold">Metamask</span> or use an existing wallet.</p>
+                    <p>Head to <a target="_blank" href="https://metamask.io/download.html" class="orange bold">metamask.io</a> and download their wallet to your phone or chrome/firefox browser.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Add the BSC network to your metamask.</p>
+                    <p>Open the <span class="orange bold">metamask</span> extention and open up "Main Network", select "Custom RPC" and put in the BSC network information.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Send <span class="orange bold">BNB</span> to your Metamask wallet.</p>
+                    <p>Buy <span class="orange bold">BNB</span> on Binance and send it to your BSC address on <span class="orange bold">Metamask</span>.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Go to <a target="_blank" href="https://exchange.pancakeswap.finance/#/swap" class="purple bold">Pancakeswap.finance</a> and make sure it's set to V2.</p>
+                    <p>Pancakeswap is where you swap your <span class="orange bold">BNB</span> to <span class="green bold">Vain</span>.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Go to Trade, then select Exchange.</p>
+                    <p>This is where you swap your <span class="orange bold">BNB</span> to <span class="green bold">Vain</span>.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Now select "Select a currency" and paste our contract address.</p>
+                    <p>This is our contract address:</p>
+                    <p id="contract2" style="word-break: break-all">0x7d03d1ae4de2702d282540782c595027bdb9d76e</p>
+                </div>
+                <div class="htb-block">
+                    <p>Adjust slippage to 12%.</p>
+                    <p>Click on the settings tab next to "Exchange" and put 12% slippage.</p>
+                </div>
+                <div class="htb-block">
+                    <p>Accept payment in <span class="orange bold">Metamask</span> wallet.</p>
+                    <p>Enter the amount <span class="orange bold">BNB</span> you want to buy and swap. <span class="orange bold">Metamask</span> will pop up and accept the payment. Remember to have enough <span class="orange bold">BNB</span> for gas fees!</p>
+                </div>
+                <div class="htb-block">
+                    <p>Make <span class="green bold">Vain</span> show up in your <span class="orange bold">Metamask</span> wallet.</p>
+                    <p>Open your <span class="orange bold">Metamask</span> wallet and scroll down to the bottom. Click on add custom token and paste in our contract address. Click next & add.</p>
+                </div>
+            </div>
+        </section>
+        <section class="social" id="social">
+            <h1 class="title mb2">Social<span class="green">.</span></h1>
+            <div class="social-body">
+                <a target="_blank" href="https://discord.gg/vaintoken">Discord</a>
+                <a target="_blank" href="https://t.me/vaintoken">Telegram</a>
+                <a target="_blank" href="https://twitter.com/Vaintoken">Twitter</a>
+                <a target="_blank" href="https://www.instagram.com/vaintoken/">Instagram</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        vain.getDonationWalletBalance();
+
+        var scrollButton = document.getElementById("scroll");
+
+        window.onscroll = function(){
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.opacity = "1";
+            } else {
+                scrollButton.style.opacity = "0";
+            }
+        }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PCE681SQR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9PCE681SQR');
+    </script>
+</body>
+</html>
