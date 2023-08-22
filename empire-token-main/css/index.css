@@ -1,0 +1,293 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#121133!important;
+    overflow-x: hidden;
+
+}
+#preloader
+{
+    background: #000 url(../img/logo-big.png) no-repeat center center;
+    background-size: 35%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    transition: all 300ms ease-in;
+   
+}
+
+.loading{
+    
+    position: absolute;
+    top : 80%;
+    left : 50%;
+    font-size: 24px;
+    transform: translate(-50%,-50%);
+   
+}
+
+.button-black{
+    background-color: black; 
+    border : 2px solid aquamarine;
+    border-radius: 5px ;
+}
+.button-black:hover {
+    background: linear-gradient(to right,#24DDDC , #7D6DE9); 
+}
+
+.profile_why_section{
+    background-image: url('../img/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 50px 0;
+
+}
+.mission-section{
+    background-image: url('../img/bg-6.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+    padding: 50px 0;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+.sponsors{
+    background: linear-gradient(180deg, #121133    0%, #051427    100%);
+    padding-bottom: 5%;
+}
+.sponsor{
+    width: 90%;
+ 
+
+}
+.sponsor-list{
+   
+    border-radius: 10px;
+    padding : 20px 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+    text-overflow: none;
+ 
+}
+.promise {
+    color: white ;
+    font-weight: 500;
+    background-image: radial-gradient(#2b4d81, #061931);
+
+    border-radius: 10px;
+    padding : 15px 15px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px;
+    text-overflow: none;
+  box-shadow: 1px 1px 5px  black;
+
+}
+.promise-logo{
+    width : 48px ;
+}
+
+.why-text{
+    color: white ;
+    font-weight: 500;
+    background-image: radial-gradient(#264471, #051427);
+    border : 1px solid #24DDDC;
+    border-radius: 10px;
+    padding : 20px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px;
+    text-overflow: none;
+  box-shadow: 1px 1px 10px 2px black,  1px 1px 5px #24DDDC inset;
+
+}
+.data{
+    color: white ;
+    font-weight: 500;
+    border: 1px solid #24DDDC;
+    padding : 20px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px;
+    text-overflow: none;
+  box-shadow: 1px 1px 10px 2px black,  1px 1px 5px #24DDDC inset;
+
+}
+.data-box{
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    top : -140px;
+
+}
+@media (max-width: 1200px) {
+    .data-box{
+        top : 0!important;
+    }
+}
+@media (min-width: 500px) {
+    .btn-poster{
+ padding-top: 50px;
+    }
+
+}
+
+.Why{
+    padding-bottom:  100px !important;
+    margin-bottom:  20px;
+}
+
+svg {
+    max-width: 300px;
+   
+}
+
+
+footer{
+    background-color: #051429;
+    font-weight: 200;
+    color : white;
+  font-weight: 100;
+
+    
+}
+.profile-svg {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.profile-name{
+    font-weight: 700;
+    color : white;
+}
+.profile-role{
+    color : #24DDDC;
+}
+.bio{
+    font-weight: 300;
+    color : white ;
+    font-size: 14px;
+}
+.missions{
+    width : 100%;
+}
+
+.mission-svg {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.mission-img{
+    max-width:180px;
+    width: 100%;
+
+}
+.mission-name{
+    font-weight: 700;
+    color : #24DDDC;
+}
+.mission-text{
+    font-weight: 300;
+    color : white ;
+    font-size: 14px;
+}
+
+
+
+.footer-icon .fab:hover{
+    color : white;
+    transform: translateY(-4px);
+    
+   
+}
+.footer-icon .fab{
+  transition: all .3s ease-in-out;
+  
+    
+   
+}
+
+.footer-icon{
+    color : #24DDDC;
+   
+   
+}
+.subsrcibe-btn{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.foot{
+ padding: 30px;
+    
+}
+.container{
+    width : 100%;
+}
+.btn{
+    color: white!important;
+    font-weight: 700!important;
+    letter-spacing: 0.8px;
+    background: linear-gradient(to right,#24DDDC , #7D6DE9); 
+    margin: 10px;
+    margin-top: 0;
+}
+
+.logo{
+    max-width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.logo-head{
+    max-width: 100%;
+  padding : 20px;
+  padding-top: 0;
+}
+.ready{
+    padding :10px 24px 10px 24px;
+   position: relative;
+   top:-14px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 140, 255, 0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 225, 255, 1);
+    background-color: aqua;
+    border-radius: 5px; 
+
+}@media (max-width: 600px) {
+    .mySwiper{
+        padding: 10px;
+    }
+
+    .case-data p {
+        margin-bottom: 0 !important; 
+    }
+}
+
+

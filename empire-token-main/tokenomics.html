@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire tokenomics </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/tokenomics.css" rel="stylesheet" />
+</head>
+<style>
+  body{
+    background-image: url('./img/bg.png') !important;
+    background-attachment: fixed !important;
+  
+    background-size: cover;
+  }
+</style>
+<body onscroll="scrollNav()">
+  <nav id="navbar">
+    <div class="logo-head">
+      <img src="./img/SideTextLogo.62b7e034.svg" />
+    </div>
+
+    <div class="links">
+      <div class="upper">
+        <div class="info">
+          <a href="./index.html" id = "home">Home</a>
+          <a href="./tokenomics.html" id = "Tokenomics">Tokenomics</a>
+          <a href="https://empiretoken.world/TechRateAudit.pdf"target="_blank" id = "Audit">Audit</a>
+          <a href="#" class="btn p-2" style="background : black ; border :  1px solid aqua"target="_blank" id = "dex">Dex</a>
+          <a href="https://nft.empiretoken.world/" class="btn p-2" style="background : black ; border :  1px solid aqua"target="_blank" id = "nft">NFT Marketplace</a>
+          <a href="https://poocoin.app/tokens/0x293c3ee9abacb08bb8ced107987f00efd1539288"target="_blank" id = "price">Price Chart</a>
+          <a href="https://realempiretoken.medium.com/" id="blog"target="_blank">Blogs & News</a>
+          <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x293C3Ee9ABaCb08BB8ceD107987F00EfD1539288"target="_blank" class="text-white btn p-2" id = "buy">Buy On PancakeSwap</a>
+        </div>
+
+        <div class="translate">
+          <div class="translate-button">
+            <i class="fas fa-globe-americas"></i>
+            <p id = "curLang">ENG</p>
+            <div class="langs">
+              <a href="#">English </a>
+              <a href="./Empire-tur.html">Turkish</a>
+              <a href="./Empire-zh.html">Chinese</a>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="mobile-nav">
+      <i class="fas fa-bars" id="menuId" style="font-size: 1.5em; padding-top :  20px; cursor: pointer; color: white"
+        onclick="openNav()"></i>
+
+      <div class="translate">
+        <div class="translate-button mobile">
+          <i class="fas fa-globe-americas"></i>
+          <p style="margin-left: 10px;">ENG</p>
+          <div class="langs">
+            <a href="#">English </a>
+            <a href="./Empire-tur.html">Turkish</a>
+            <a href="./Empire-zh.html">Chinese</a>
+          </div>
+        </div>
+        <div class="sidenav" id="mySidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   
+          <a href="#" id = "home">Home</a>
+          <a href="./tokenomics.html" id="token"> Tokenomics</a>
+          <a href="https://empiretoken.world/TechRateAudit.pdf"target="_blank" id = "audit">Audit</a>
+          <a href="#" class="button-black" target="_blank" id="dex">Dex</a>
+          <a href="https://nft.empiretoken.world/" class="button-black"target="_blank" id = "nft">NFT Marketplace</a>
+          <a href="https://poocoin.app/tokens/0x293c3ee9abacb08bb8ced107987f00efd1539288"target="_blank" id = "price">Price Chart</a>
+          <a href="https://realempiretoken.medium.com/"target="_blank" id = "blog">Blogs & News</a>
+          <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x293C3Ee9ABaCb08BB8ceD107987F00EfD1539288"target="_blank" class="btn" id = "buy">Buy On PancakeSwap</a>
+         
+        </div>
+      </div>
+    </div>
+  </nav>
+    
+<img src="./img/logo-big.png" class="logo-tokenomics">
+<div class="box-big">
+  <h5 class="text-center text-white">Tokenomics</h5>
+  <h1 class=" m-4 pt-2 mt-0 text-center text-white" data-aos="fade-up">The Empire Token <span class="fw-bold"
+      style="color : #24DDDC; padding-left :  12px">Tokenomics</span></h1>
+      
+        <div class="tokenomics">
+            <div class="container p-4 justify-content-center">
+                <div class="row justify-content-evenly">
+                  <div class="col-xl-4  col-5 box-1">
+                      <div class="hex hex-x1">
+                        <div class="hex-title text-center text-white" >
+                          MARKETING & TEAM
+                          <div class="per fw-bold">
+                            3%
+                          </div>
+                        </div>
+                    
+      
+                      </div>
+                      <div class="hex hex-x2" style="background-image : url(./)">
+                        
+                      </div>
+                      <div class="hex hex-x3">
+                        <div class="hex-title text-center text-white" >
+                         TOTAL TAX
+                          <div class="per fw-bold">
+                            10%
+                          </div>
+                        </div>
+                      </div>
+                      
+      
+                  </div>
+                
+      
+                  <div class="col-xl-4 col-5  box-3">
+                      <div class="hex hex-y1">
+                        <div class="hex-title text-center text-white" >
+                          REFLECTION
+                          <div class="per fw-bold">
+                            3%
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hex hex-y2"  style="background-image : url(./)">
+                        
+                      </div>
+                      <div class="hex hex-y3">
+                        <div class="hex-title text-center text-white" >
+                        LIQUIDITY POOL
+                          <div class="per fw-bold">
+                            4%
+                          </div>
+                        </div>
+                      </div>
+                     
+                  </div>
+      
+                </div>
+  
+             
+            </div>
+  
+        </div>
+  
+        <div class="container-fluid p-4 justify-content-center ">
+          <div class="row  justify-content-center">
+            <div class="col-5   col-xl-2 data-2 " data-aos="fade-up">
+              PRIVATE SALE
+              <div class="per fw-bold">
+              6%
+              </div>
+            </div>
+            <div class="col-5  col-xl-2 data-2" data-aos="fade-up">
+              PRESALE
+              <div class="per fw-bold">
+              32%
+              </div>
+            </div>
+            <div class="col-5  col-xl-2 data-2" data-aos="fade-up">
+              LIQUIDITY
+              <div class="per fw-bold">
+              21%
+              </div>
+            </div>
+            <div class="col-5    col-xl-2 data-2" data-aos="fade-up">
+              MARKETING
+              <div class="per fw-bold">
+                7%
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid p-2 justify-content-center ">
+          <div class="row  justify-content-center">
+            <div class="col-8   data-3 " data-aos="fade-up">
+              Marketing, Partnerships, and Team Wallets are locked
+            </div>
+           
+          </div>
+        </div>
+        <div class="container-fluid p-4 justify-content-center ">
+          <div class="row  justify-content-center">
+            <div class="col-5   col-xl-2 data-2 " data-aos="fade-up">
+             MANUAL BURN
+              <div class="per fw-bold">
+                12%
+              </div>
+            </div>
+            <div class="col-5  col-xl-2 data-2" data-aos="fade-up">
+             TEAM
+              <div class="per fw-bold">
+                7%
+              </div>
+            </div>
+            <div class="col-5  col-xl-2 data-2" data-aos="fade-up">
+              STAKING & REWARD
+              <div class="per fw-bold">
+                10%
+              </div>
+            </div>
+            <div class="col-5    col-xl-2 data-2" data-aos="fade-up">
+              PARTNERSHIPS & LISTINGS
+              <div class="per fw-bold">
+                5%
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+<footer class="text-lg-start  text-muted ">
+
+  <!-- Section: Links  -->
+  <!-- Section: Social media -->
+  <section class="d-md-flex  justify-content-between  text-white" style="padding: 0px 20px;">
+    <!-- Left -->
+    <div class="me-6">
+      <img class="logo" src="./img/SideTextLogo.62b7e034.svg">
+    </div>
+
+    <!-- Right -->
+    <div class="p-3">
+      <span class="ready" id = "ready">Ready to get started ?</span>
+      <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x293C3Ee9ABaCb08BB8ceD107987F00EfD1539288"target="_blank" class="btn" id = "buy">
+        Buy On Pancakeswap
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+
+  <!-- Section: Links  -->
+  <section class="" style="width:100%;">
+    <div class="container-fluid  mt-10">
+      <!-- Grid row -->
+      <div class="row foot justify-content-center mt-3" style="width:100%;">
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-4 col-xl-4  mb-4">
+
+
+          <!-- Section: Form -->
+          <section class="">
+            <form action="">
+              <!--Grid row-->
+              <div class="row d-flex ">
+                <!--Grid column-->
+                <div class="col-auto" style="padding-bottom: 30px;">
+                  <h3 class="text-white" style="width:80%; font-weight: 400;" id ="sub">
+                    Subscribe to our
+                    newsletter
+                  </h3>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-8" style="padding: 0 ;padding-left:12px;">
+                  <!-- Email input -->
+                  <div class="form-outline form-white mb-4" style="border-bottom: 1px solid #24DDDC; width:100% ">
+                    <input type="email" id="form5Example2" class="form-control" />
+                    <label class="form-label" for="form5Example2">Email address</label>
+                  </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-4" style="padding:0">
+                  <!-- Submit button -->
+                  <button type="submit" class="btn subsrcibe-btn" style=" background-color:#24DDDC ;border-bottom-left-radius: 0; margin:0;
+            border-bottom-right-radius: 0; border-bottom: 1.5px solid #24DDDC;">
+                    <i class="fas fa-angle-right"></i>
+                  </button>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </form>
+          </section>
+          <!-- Section: Form -->
+
+
+
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2  mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="http://nft.empiretoken.world" class="text-reset" target="_blank"id = "nft">NFT Marketplace</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset" target="_blank"id="dex">Dex</a>
+          </p>
+         
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="https://empiretoken.world/whitepaper.pdf" class="text-reset" target="_blank"id = "whitepaper">whitepaper</a>
+          </p>
+          <p>
+            <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x293C3Ee9ABaCb08BB8ceD107987F00EfD1539288" target="_blank"class="text-reset" id = "PancakeSwap">Pancakeswap</a>
+          </p>
+          <p>
+            <a href="https://bscscan.com/token/0x293C3Ee9ABaCb08BB8ceD107987F00EfD1539288"target="_blank" class="text-reset" id = "PancakeSwap">BSC Scan</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4 text-white">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">
+            Contact
+          </h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            admin@empiretoken.world
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+
+  <!-- Section: Links  -->
+  <!-- Section: Social media -->
+  <section class="d-sm-flex  justify-content-between p-4 text-white">
+    <!-- Left -->
+    <div class="me-6">
+      <span>terms & conditions  </span>
+      <span>Privacy Policy</span>
+    </div>
+
+    <!-- Left -->
+
+    <!-- Right -->
+    <div class="footer-icon">
+     <!-- 
+       <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    --> 
+      <a href="https://twitter.com/RealEmpireToken" target="_blank"class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://youtube.com/channel/UCYSHk8YsR1jxNR64ezx6q3Q" target="_blank"class="me-4 text-reset">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://instagram.com/empiretoken"target="_blank" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href=" http://t.me/empiretokenworld"target="_blank" class="me-4 text-reset">
+        <i class="fab fa-telegram"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="#">Empiretoken.world</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+      <script>
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "100%";
+          document.getElementById("menuId").style.opacity = 0;
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("menuId").style.opacity = 1;
+        }
+        function scrollNav() {
+          if (window.pageYOffset >= 100) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+      </script>
+      <script>
+        var loader = document.getElementById("preloader");
+    
+        window.addEventListener("load",function()
+        {
+          loader.style.display = "none";
+        })
+      </script>
+</body>
+</html>
